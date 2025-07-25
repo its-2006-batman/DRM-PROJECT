@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sr.SV</title>
+  <link rel="stylesheet" href="SO CSS.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sr.SV</h1>
+    <h2>General Duties and Members</h2>
+
+    <div class="grid">
+      <div class="members">
+        <h3>Members</h3>
+        <p><strong>Sanctioned Strength:</strong> <span id="sanctioned"></span></p>
+        <p><strong>Men-On-Roll:</strong> <span id="menOnRoll"></span></p>
+
+        <h4>Members Name</h4>
+        <ol id="memberList">
+          <!-- Filled by JS -->
+        </ol>
+      </div>
+
+      <div class="duties">
+        <h3>Duties and Responsibilities</h3>
+        <div id="dutiesSection">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </div>
+
+    <footer>&copy; Copyright reserved Northern Central RAILWAY</footer>
+  </div>
+
+  <script>
+    fetch("/latest")
+      .then(res => res.json())
+      .then(({ data }) => {
+        // Fill sanctioned and roll values
+        document.getElementById("sanctioned").textContent = data.sv_sanctioned_strength || "";
+        document.getElementById("menOnRoll").textContent = data.sv_men_on_roll || "";
+
+        // Fill members list
+        let members = data.sv_members || [];
+        if (typeof members === "string") members = [members];
+
+        const memberList = document.getElementById("memberList");
+        memberList.innerHTML = members.map(name => `<li><a href="#">${name}</a></li>`).join("");
+
+        // Fill duties section
+        document.getElementById("dutiesSection").innerHTML = data.sv_duties || "";
+      })
+      .catch(err => {
+        console.error("Error loading SV data:", err);
+        document.getElementById("dutiesSection").innerHTML = "<p>Failed to load data.</p>";
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.top-bar {
+    background-color: #1e61a8;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    font-size: 14px;
+}
+
+#datetime {
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.railways-logo {
+    height: 80px;
+    margin-right: 10px;
+}
+
+.logo-area h1 {
+    color: #1e61a8;
+    font-size: 32px;
+    margin: 0;
+    text-shadow: 1px 1px #aaa;
+}
+
+.middle-graphic img {
+    height: 80px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons img {
+    height: 25px;
+}
+
+.ashoka-emblem {
+    height: 60px;
+}
+
+.main-nav {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e61a8;
+    text-align: center;
+
+}
+
+.main-nav td {
+    border: 1px solid black;
+    padding: 10px 5px;
+}
+
+.main-nav a {
+
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+}
+
+.main-nav td:hover {
+    background-color: #154d7f;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #1e61a8;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.dropbtn:hover {
+    background-color: #154d7f;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.notice {
+    background: #D32F2F;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.hero {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(images/account.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+}
+
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the dynamically fetched data container */
+#data-container {
+    padding: 40px 20px;
+    background-color: #f4f7f6; /* A light grey background to separate the section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* Individual field styling (each key-value pair) */
+.field {
+    background-color: #ffffff;
+    border-left: 5px solid #1e61a8; /* Accent color matching your theme */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px; /* Limits width on larger screens */
+}
+
+/* Styling for the key (e.g., 'Name', 'Department') */
+.field h3 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    color: #1e61a8; /* Blue color matching your theme */
+    text-transform: capitalize; /* Ensures keys are consistently cased */
+}
+
+/* Styling for the value */
+.field p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.org-chart {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.6)),url(images/indian_railways_logo.png);
+  background-size: cover;
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  background-color: white;
+  overflow: visible;
+}
+
+.org-chart a{
+  
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.avatar{
+  background-color: green;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png');
+  background-size: cover;
+  margin-left: 30%;
+}
+
+/* Levels in the chart */
+.level {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  position: relative;
+}
+
+.level-3 {
+  gap: 10px;
+}
+
+/* Vertical lines between levels */
+.level::after {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  width: 2px;
+  height: 120px;
+  background: #fffcfc;
+  z-index: -1;
+}
+
+.level-2::after {
+  content: "";
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  width: 2px;
+  height: 50px;
+  background: #fffdfd;
+}
+
+.level-1::after {
+  display: none;
+}
+
+/* Nodes (the rounded blocks) */
+.node {
+  max-width: fit-content;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  
+  overflow: hidden;
+  text-align: center;
+  padding: 10px 10px 1px;
+  position: relative;
+  height: auto;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.312);
+}
+
+.text0 h3 {
+  font-size: 16px;
+  color: #000000;
+}
+
+
+.text h3 {
+  padding-bottom: 5px;
+  font-size: 15px;
+}
+
+
+
+/* Connecting horizontal lines between nodes in a level */
+.level-2::before,
+.level-3::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #fffbfb;
+}
+
+.node:hover{
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  
+  color: blue;
+  font-weight: 800;
+  transform: translateY(-5px);
+}
+
+.duties {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  width: 50%;
+  height: 90vh;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+svg {
+  height: 100%;
+}
+
+/* tangent(30) = 0.57735026919
+*/
+
+@keyframes trainAnimation {
+  0% {
+    transform: translate(2500px, calc(-1 * 2500px * 0.57735026919));
+  }
+
+  35% {
+    transform: translate(0);
+  }
+
+  65% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-2500px, calc(2500px * 0.57735026919));
+  }
+}
+
+#Train1 {
+  animation: trainAnimation 15s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  transform: translate(2500px, calc(-1 * 2500px * 0.57735026919));
+}
+
+#Train2 {
+  animation: trainAnimation 16s 3s ease-in-out infinite reverse;
+  animation-fill-mode: forwards;
+  transform: translate(-2500px, calc(2500px * 0.57735026919));
+}
+
+.list {
+  width: 40%;
+  word-wrap: normal;
+  min-height: fit-content;
+  margin-top: 10%;
+  color: black;
+}
+
+.list h1 {
+  font-size: 35px;
+  text-shadow: 2px 2px #91C8E4;
+}
+
+.list ol li{
+  font-size: 25px;
+  margin-top: 10px;
+}
+footer {
+  position: relative;
+  background-color: #1e61a8;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30%;
+  font-size: 14px;
+}

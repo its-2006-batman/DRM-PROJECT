@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TADK</title>
+  <link rel="stylesheet" href="SO CSS.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>TADK</h1>
+    <h2>General Duties and Members</h2>
+
+    <div class="grid">
+      <div class="members">
+        <h3>Members</h3>
+        <p><strong>Sanctioned Strength:</strong> <span id="sanctioned"></span></p>
+        <p><strong>Men-On-Roll:</strong> <span id="menOnRoll"></span></p>
+
+        <h4>Members Name</h4>
+        <ol id="memberList"></ol>
+      </div>
+
+      <div class="duties">
+        <h3>Duties and Responsibilities</h3>
+        <div id="dutiesSection"></div>
+      </div>
+    </div>
+
+    <footer>&copy; Copyright reserved Northern Central RAILWAY</footer>
+  </div>
+
+  <script>
+    fetch("/latest")
+      .then(res => res.json())
+      .then(({ data }) => {
+        document.getElementById("sanctioned").textContent = data.tadk_sanctioned_strength || "";
+        document.getElementById("menOnRoll").textContent = data.tadk_men_on_roll || "";
+        let members = data.tadk_members || [];
+        if (typeof members === "string") members = [members];
+        document.getElementById("memberList").innerHTML =
+          members.map(name => `<li><a href="#">${name}</a></li>`).join("");
+        document.getElementById("dutiesSection").innerHTML = data.tadk_duties || "";
+      })
+      .catch(() => {
+        document.getElementById("dutiesSection").innerHTML = "<p>Failed to load data.</p>";
+      });
+  </script>
+</body>
+</html>

@@ -24,8 +24,8 @@ A **web-based portal** for the **North Central Railway Accounts Department**, pr
 ---
 
 🛠️ Tech Stack
-Backend-Node.js, Express.js.
-Database-MongoDB.
+Backend-Node.js, Express.js<br>
+Database-MongoDB<br>
 Frontend-HTML, CSS, JavaScript
 
 ---

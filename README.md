@@ -1,4 +1,4 @@
-🚆 North Central Railway Employee Portal
+<h1><bold>🚆 North Central Railway Employee Portal</bold></h1>
 
 A **web-based portal** for the **North Central Railway Accounts Department**, providing staff hierarchy, organizational details, duties, and an **admin dashboard** for content management.
 
@@ -23,7 +23,7 @@ A **web-based portal** for the **North Central Railway Accounts Department**, pr
 
 ---
 
-🛠️ Tech Stack
+🛠️ Tech Stack<br>
 Backend-Node.js, Express.js<br>
 Database-MongoDB<br>
 Frontend-HTML, CSS, JavaScript
